@@ -1,12 +1,20 @@
 var chai = require('chai'), expect = chai.expect, should = chai.should();
-var assert = require('assert');
+
 var hello = require( '../index.js');
 
 describe('HelloWorld', function(){
-  describe('Module HelloWorld', function(){
-    it('should have a getChange Method', function(){
-      assert.equal(typeof hello, 'object');
+  it('#Hello shoud be string', function(){
+    hello.hello("Rien").should.be.a('string');
 
     });
+  it('#Hello shoud be return', function(){
+        hello.hello("Rien").should.equal('Hello Rien')
+
     });
-        });
+
+  it('#hello should return string with numbers',function(){
+    expect(hello.hello(1258)).to.be.a('string')
+
+  });
+
+});
